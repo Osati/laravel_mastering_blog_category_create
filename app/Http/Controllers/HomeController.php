@@ -9,7 +9,9 @@ use App\Models\Blog;
 class HomeController extends Controller
 {
     public function index(){
-        return view('front-end.index');
+        return view('front-end.index',[
+            'details'=>Blog::all()
+        ]);
     }
     public function business(){
         return view('front-end.business.business');

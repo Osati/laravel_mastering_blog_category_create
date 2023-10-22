@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VisitorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,9 @@ Route::get('/blog/detail/{id}',[HomeController::class,'blogDetail'])->name('blog
 Route::get('/business',[HomeController::class,'business'])->name('business');
 Route::get('/culture',[HomeController::class,'culture'])->name('culture');
 Route::get('/politics',[HomeController::class,'politics'])->name('politics');
+
+Route::get('/signup',[VisitorController::class,'signup'])->name('visitor.signup');
+Route::get('/politics',[VisitorController::class,'politics'])->name('politics');
 
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
