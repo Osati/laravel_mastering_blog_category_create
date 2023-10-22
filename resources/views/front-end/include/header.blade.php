@@ -30,9 +30,14 @@
                             <li><a href="{{ route('culture') }}">Culture</a></li>
                             <li><a href="{{ route('business') }}">Business</a></li>
                             <li><a href="{{ route('politics') }}">Politics</a></li>
+                            @if(Session::get('visitorId'))
+                                <li><a href="{{ route('visitor.signup') }}">{{ Session::get('visitorname') }}</a></li>
+                                <li><a href="{{ route('visitor.logOut') }}">LogOut</a></li>
+                            @else
+                                <li><a href="{{ route('visitor.signup') }}">sign-up</a></li>
+                                <li><a href="{{ route('visitor.login') }}">sign-in</a></li>
+                            @endif
 
-                            <li><a href="{{ route('visitor.signup') }}">sign-up</a></li>
-                            <li><a href="{{ route('politics') }}">sign-in</a></li>
                         </ul>
                     </div>
                     <div class="col-2 text-end">

@@ -30,7 +30,10 @@ Route::get('/culture',[HomeController::class,'culture'])->name('culture');
 Route::get('/politics',[HomeController::class,'politics'])->name('politics');
 
 Route::get('/signup',[VisitorController::class,'signup'])->name('visitor.signup');
-Route::get('/politics',[VisitorController::class,'politics'])->name('politics');
+Route::post('/signup/store',[VisitorController::class,'signupStore'])->name('visitor.store');
+Route::get('/signin',[VisitorController::class,'login'])->name('visitor.login');
+Route::post('/signin',[VisitorController::class,'loginCheck'])->name('visitor.login');
+Route::get('/logout',[VisitorController::class,'logOut'])->name('visitor.logOut');
 
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
